@@ -1,0 +1,24 @@
+<div class="card mt-2">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a class="badge badge-primary" href="javascript:void(0);" data-toggle="modal" data-target="#new-message" (click)="reply()"><span [innerHTML]="'arrow-left' | feather:16"></span> Beantwoorden</a>
+            </li>
+            <li class="nav-item">
+                <a class="ml-2 badge badge-secondary" href="javascript:void(0);" data-toggle="modal" data-target="#new-message" (click)="forward()"><span [innerHTML]="'arrow-right' | feather:16"></span> Doorsturen</a>
+            </li>
+            <li class="nav-item">
+                <a class="ml-2 badge badge-danger" href="javascript:void(0);" data-toggle="modal" data-target="#confirm-delete-item" (click)="delete()"><span [innerHTML]="'trash-2' | feather:16"></span> Verwijderen</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{message.title}}</h5>
+        <p class="card-text">{{message.content}}</p>
+        <p class="card-text"><span [innerHTML]="'user' | feather:16"></span> Ontvanger: {{message.receiver.firstname}} {{message.receiver.lastname}}<br>
+        <span [innerHTML]="'user' | feather:16"></span> Afzender: {{message.sender.firstname}} {{message.sender.lastname}}
+        <br><span [innerHTML]="'clock' | feather:16"></span> Verzonden op {{message.timeSend | date:'EEEE d MMMM y'}} om {{message.timeSend | date:'hh:mm:ss'}}
+        <!--<br><span [innerHTML]="'clock' | feather:16"></span> Gelezen op {{message.timeRead | date:'EEEE d MMMM y'}} om {{message.timeRead | date:'hh:mm:ss'}}</p>-->
+        <div *ngIf="filename !== ''"><span [innerHTML]="'paperclip' | feather:16"></span><a id="download" [href]="filedata" download="{{filename}}"> Bijlage downloaden</a></div>
+    </div>
+</div>

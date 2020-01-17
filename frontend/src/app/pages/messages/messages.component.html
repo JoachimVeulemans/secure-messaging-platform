@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 col-xl-2 bg-light side-info side-info-left sidebar-sticky" id="sidebar">
+            <button type="button" (click)="changedStatus()" name="stateButton"
+                    [ngClass]="{activeClass: userState.stateTitle.toLowerCase()==='active', awayClass: userState.stateTitle.toLowerCase() == 'away', busyClass: userState.stateTitle.toLowerCase() == 'busy', offlineClass: userState.stateTitle.toLowerCase() == 'offline' }">
+                {{ userState.stateTitle }} </button>
+            <p class="mt-2 text-primary">Gelieve een gebruiker te selecteren om een bericht te verzenden:</p>
+            <app-treeview *ngIf="!treeviewLoading"  class="mt-2" [data]="users"></app-treeview>
+            <div *ngIf="treeviewLoading">
+                    <p><span [innerHTML]="'loader' | feather:16"></span> Gebruikers worden geladen, even geduld...</p>
+                </div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8 col-xl-8 mt-3 overflow">
+            <h1>Inbox</h1>
+            <div *ngIf="loading">
+                <p><span [innerHTML]="'loader' | feather:16"></span> Berichten worden geladen, even geduld...</p>
+            </div>
+            <div *ngIf="!loading && messages.length === 0">
+                <p><span [innerHTML]="'frown' | feather:16"></span> U heeft geen berichten.</p>
+            </div>
+            <div *ngFor="let message of messages">
+                <app-message [message]="message" (actionButtonClicked)="actionButtonClicked($event)"></app-message>
+            </div>
+        </div>
+        <div class="col-xs-0 col-sm-0 col-md-0 col-lg-2 col-xl-2 bg-light">
+            <a class="btn btn-primary btn-xl js-scroll-trigger mt-4" (click)="logout()" href="javascript:void(0);"><span [innerHTML]="'log-out' | feather:16"></span> Uitloggen</a>
+        </div>
+    </div>
+</div>
+
+<app-delete-confirmation [object]="selectedMessage" [displayedFieldname]="'title'" [id]="'confirm-delete-item'" (confirmDeletion)="messageDeleted()"></app-delete-confirmation>
+<app-new-message [message]="selectedMessage" (messageSend)=sendMessage($event) (usersLoaded)="usersLoaded()"></app-new-message>

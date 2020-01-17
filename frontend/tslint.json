@@ -1,0 +1,207 @@
+{
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "extends": [
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "no-constant-condition": true,
+    "no-control-regex": true,
+    "callable-types": true,
+    "class-name": true,
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "curly": true,
+    "eofline": true,
+    "forin": true,
+    "import-blacklist": [true],
+    "import-spacing": true,
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "ter-no-mixed-spaces-and-tabs": { "type": "spaces" },
+    "interface-over-type-literal": true,
+    "label-position": true,
+    "max-line-length": [
+      true,
+      250
+    ],
+    "member-access": false,
+    "member-ordering": [
+      true,
+      "static-before-instance",
+      "variables-before-functions"
+    ],
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-variable": true,
+    "no-duplicate-case": true,
+    "no-empty": false,
+    "no-empty-interface": true,
+    "no-empty-character-class": true,
+    "no-eval": true,
+    "no-inferrable-types": [true, "ignore-params"],
+    "no-inner-declarations": [
+        true,
+        "both"
+    ],
+
+    "ter-no-irregular-whitespace": [true],
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-string-throw": true,
+    "no-switch-case-fall-through": true,
+    "no-trailing-whitespace": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "object-literal-sort-keys": false,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    "prefer-const": true,
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "radix": true,
+    "semicolon": [
+      "always"
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      }
+    ],
+    "unified-signatures": true,
+    "variable-name": false,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ],
+    "directive-selector": [true, "attribute", "cloudclass", "camelCase"],
+    "component-selector": [true, "element", "cloudclass", "kebab-case"],
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-input-rename": false,
+    "no-output-rename": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": true,
+    "directive-class-suffix": true,
+
+
+    "no-ex-assign": true,
+    "no-extra-boolean-cast": true,
+    "no-extra-semi": true,
+    "no-irregular-whitespace": true,
+        "ter-arrow-body-style": [
+            false,
+            "as-needed",
+            {
+                "requireReturnForObjectLiteral": true
+            }
+        ],
+        "ter-arrow-parens": [
+            true,
+            "as-needed",
+            {
+                "requireForBlockBody": true
+            }
+        ],
+        "ter-arrow-spacing": [
+            true
+        ],
+        "ter-prefer-arrow-callback": [
+            false,
+            {
+                "allowNamedFunctions": true,
+                "allowUnboundThis": false
+            }
+        ],
+        "ter-indent": [
+            true,
+            4,
+            {
+                "SwitchCase": 1,
+                "outerIIFEBody": 0,
+                "MemberExpression": 1,
+                "FunctionDeclaration": {
+                    "body": 1,
+                    "parameters": 1
+                },
+                "FunctionExpression": {
+                    "body": 1,
+                    "parameters": 1
+                },
+                "CallExpression": {
+                    "arguments": 1
+                }
+            }
+        ],
+        "ter-no-self-compare": true,
+        "handle-callback-err": [
+            true,
+            "^(err|error|anySpecificError)$",
+            { "allowProperties": false }],
+        "block-spacing": [
+            true,
+            "always"
+        ],
+        "ter-no-script-url": true,
+        "ter-newline-after-var": [true, "always"],
+        "array-bracket-spacing": [true, "never"],
+        "no-multi-spaces": [
+            true,
+            {
+                "exceptions": {
+                    "PropertyAssignment": false
+                }
+            }
+        ],
+        "object-curly-spacing": [
+            true,
+            "always"
+        ],
+        "space-in-parens": [
+            true,
+            "never"
+        ],
+        "sort-imports": "error",
+        "brace-style": ["error", "stroustrup"],
+        "ter-computed-property-spacing": [true, "never"],
+        "ter-func-call-spacing": [true, "never"]
+  }
+}

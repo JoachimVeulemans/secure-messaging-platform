@@ -1,0 +1,70 @@
+<div class="container-fluid row">
+    <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+    <div class="card col-xs-12 col-sm-7 col-md-7 col-lg-7 col-xl-6 mt-4">
+        <h5 class="card-header">
+            {{user.firstname}}'s profiel<br>
+            <span style="font-size: 0.6em">{{user.id}}</span>
+        </h5>
+        <div class="card-body">
+            <form action="">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="username">Gebruikersnaam</label>
+                            <input #username type="text" value="{{user.username}}" class="form-control" id="username" placeholder="Typ hier uw gebruikersnaam...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="firstname">Voornaam</label>
+                            <input #firstname type="text" value="{{user.firstname}}" class="form-control" id="firstname" placeholder="Typ hier uw voornaam...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="lastname">Achternaam</label>
+                            <input #lastname type="text" value="{{user.lastname}}" class="form-control" id="lastname" placeholder="Typ hier uw familienaam...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="email">Emailadres</label>
+                            <input #email type="email" value="{{user.email}}" class="form-control" id="email" placeholder="Typ hier uw emailadres...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <a href="javascript:void(0);" class="btn btn-primary" (click)="updateProfile(username.value, firstname.value, lastname.value, email.value)"><span [innerHTML]="'save' | feather:16"></span> Gegevens aanpassen</a>
+                    <a href="javascript:void(0);" class="btn btn-danger ml-2" data-toggle="modal" data-target="#confirm-delete-item"><span [innerHTML]="'trash-2' | feather:16"></span> Profiel verwijderen</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4 col-xl-5">
+        <a class="btn btn-primary btn-xl js-scroll-trigger mt-4" (click)="logout()" href="javascript:void(0);"><span [innerHTML]="'log-out' | feather:16"></span> Uitloggen</a>
+    </div>
+</div>
+
+<div class="modal fade" id="confirm-delete-item" tabindex="-1" role="dialog" *ngIf="user">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span [innerHTML]="'alert-triangle' | feather:16"></span>
+                <button class="close" type="button" data-dismiss="modal">
+                    <span aria-hidden="true"><span [innerHTML]="'x' | feather:16"></span></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Weet u zeker dat u uw account wil verwijderen?<br><br>Dit betekent dat u niet meer kan inloggen en geen berichten meer kan versturen of bekijken. Uw informatie is permanent verwijderd!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal"><span [innerHTML]="'x' | feather:16"></span> Nee</button>
+                <button class="btn btn-danger" data-dismiss="modal" (click)="deleteProfile()"><span [innerHTML]="'trash-2' | feather:16"></span> Ja</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="modal fade" id="new-message" tabindex="-1" role="dialog" *ngIf="message">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="m-0">Bericht versturen</p>
+                <button class="close" type="button" data-dismiss="modal">
+                    <span aria-hidden="true"><span [innerHTML]="'x' | feather:16"></span></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <form action="">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="receiver"><span [innerHTML]="'user' | feather:16"></span> Ontvanger</label>
+                                        <ng-multiselect-dropdown name="allUsers" [placeholder]="'Selecteren'" [data]="allUsers" [(ngModel)]="selectedUsers" [settings]="dropdownSettings"></ng-multiselect-dropdown>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="title"><span [innerHTML]="'chevrons-right' | feather:16"></span> Onderwerp</label>
+                                        <input #title type="text" value="{{message.title}}" class="form-control" id="title" placeholder="Typ hier uw titel...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="content"><span [innerHTML]="'message-square' | feather:16"></span> Bericht</label>
+                                        <textarea #content value="{{message.content}}" class="form-control" id="content" placeholder="Typ hier uw bericht..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="content"><span [innerHTML]="'paperclip' | feather:16"></span> Bijlage</label>
+                                        <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row modal-footer pl-0 pr-2 pb-0 pt-2">
+                                    <button class="btn btn-secondary" data-dismiss="modal"><span [innerHTML]="'x' | feather:16"></span> Annuleren</button>
+                                    <button class="btn btn-primary" data-dismiss="modal" (click)="sendMessage(title.value, content.value)"><span [innerHTML]="'send' | feather:16"></span> Verzenden</button>
+                            </div>
+                        </form>
+                    </div>
+        </div>
+    </div>
+</div>

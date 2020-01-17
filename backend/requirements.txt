@@ -1,0 +1,7 @@
+bson==0.5.8
+cryptography==2.3
+Flask==1.1.1
+Flask-Cors==3.0.8
+Flask-Login==0.4.1
+gunicorn==19.9.0
+pycrypto==2.6.1

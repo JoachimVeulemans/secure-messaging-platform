@@ -34,7 +34,7 @@ class TestApi(unittest.TestCase):
 
         self.assertEqual(rv.status, '401 UNAUTHORIZED')
     
-    @parameterized.expand([('iets', '9b30233e2abebf5a165de6eb6f6a57d757d2f0b28e3efb1296ac908c73f979fa')])
+    @parameterized.expand([('iets', 'd1f9809507ddd406f5d55541c515fcc88c6734175808df2f3e0e4fa4d01535ee')])
     def test_api_login_should_return_true_when_credentials_are_correct(self, user, password):
         login_json = {'username': user, 'password': password}
         response = self.myapp.post('/login', content_type='application/json', data=json.dumps(login_json))

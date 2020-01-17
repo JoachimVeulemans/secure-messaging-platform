@@ -2,10 +2,9 @@
 FROM ubuntu:18.04
 
 # 2 - Run apt update
-RUN apt-get update 
-
-# 3 - Run apt upgrade
-RUN apt-get upgrade -y 
+RUN set -x \
+        && apt-get update \
+        && apt-get upgrade -y
 
 # 4 - Install needed packages
 RUN apt-get install -y apache2 python3 python3-pip libapache2-mod-wsgi-py3

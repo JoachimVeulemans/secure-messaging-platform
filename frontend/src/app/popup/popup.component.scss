@@ -1,0 +1,17 @@
+.bottom-right {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+.message {
+    position: "relative";
+    display: block;
+    margin: 0.1em auto;
+}
+
+.messageFade {
+    opacity: 0;
+    transform: translate(50em, 0);
+    transition: 1s ease-in-out all;
+}

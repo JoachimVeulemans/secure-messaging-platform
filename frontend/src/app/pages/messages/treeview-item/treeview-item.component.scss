@@ -1,0 +1,20 @@
+li {
+    list-style-type: none;
+}
+
+a.nav-link {
+    cursor: pointer;
+}
+
+i {
+    min-width: 20px;
+}
+
+.nav-item {
+    font-weight: 500;
+    color: #333333;
+
+    .active {
+        color: #0066ff;
+    }
+}

@@ -1,0 +1,22 @@
+<li class="nav-item" *ngFor="let item of data">
+
+    <div *ngIf="item.type === 'group'; then groupType else itemType"></div>
+
+    <ng-template #groupType>
+        <a class="nav-link collapse-group collapsed" data-toggle="collapse" href="#id_{{item.id}}" role="button" aria-expanded="false" [attr.aria-controls]="'id_' + item.id"
+            (click)="selectGroup(item)">
+            <span id="iClose_{{item.id}}" [innerHTML]="'user' | feather:16"></span>
+            {{item.name}}
+        </a>
+        <ul class="collapse" id="id_{{item.id}}">
+            <app-treeview-item [data]="item.data"></app-treeview-item>
+        </ul>
+    </ng-template>
+
+    <ng-template #itemType>
+        <a class="nav-link" (click)="selectItem(item)" data-toggle="modal" data-target="#new-message">
+            <span [innerHTML]="'user' | feather:16"></span>
+            {{item.name}}
+        </a>
+    </ng-template>
+</li>

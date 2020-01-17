@@ -1,0 +1,19 @@
+<div class="modal fade" id="{{id}}" tabindex="-1" role="dialog" *ngIf="object">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span [innerHTML]="'alert-triangle' | feather:16"></span>
+                <button class="close" type="button" data-dismiss="modal">
+                    <span aria-hidden="true"><span [innerHTML]="'x' | feather:16"></span></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Weet u zeker dat u '{{object[displayedFieldname]}}' wilt verwijderen?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal"><span [innerHTML]="'x' | feather:16"></span> Nee</button>
+                <button class="btn btn-danger" data-dismiss="modal" (click)="confirm()"><span [innerHTML]="'trash-2' | feather:16"></span> Ja</button>
+            </div>
+        </div>
+    </div>
+</div>

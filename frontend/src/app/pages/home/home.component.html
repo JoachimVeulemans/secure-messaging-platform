@@ -1,0 +1,95 @@
+<div class="container login-container">
+  <div class="row">
+    <div class="col-md-3"></div>
+      <div class="col-md-6 login-form-1">
+          <h3>Welkom bij Whatsupp</h3>
+          <form action="">
+              <div class="form-group">
+                  <input #username type="text" class="form-control" placeholder="Gebruikersnaam" value="" />
+              </div>
+              <div class="form-group">
+                  <input #password type="password" class="form-control" placeholder="Wachtwoord" value="" />
+              </div>
+              <div class="form-group">
+                  <input (click)="login(username.value, password.value)" type="submit" class="btnSubmit" value="Login" />
+              </div>
+              <div class="form-group">
+                  <a href="javascript:void(0);" (click)="register(username.value)" data-toggle="modal" data-target="#register" class="bold">Nog geen account?</a>
+              </div>
+          </form>
+      </div>
+      <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" *ngIf="username">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="m-0">Registeren</p>
+                <button class="close" type="button" data-dismiss="modal">
+                    <span aria-hidden="true"><span [innerHTML]="'x' | feather:16"></span></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                    <form action="">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="firstnameR">Voornaam</label>
+                                        <input #firstnameR type="text" class="form-control" id="firstnameR" placeholder="Typ hier uw voornaam...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="lastnameR">Achternaam</label>
+                                        <input #lastnameR type="text" class="form-control" id="lastnameR" placeholder="Typ hier uw achternaam...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <label for="usernameR">Gebruikersnaam</label>
+                                        <input #usernameR type="text" (change)="checkUsername(usernameR.value)" value="{{usernameValue}}" class="form-control" id="usernameR" placeholder="Typ hier uw gebruikersnaam...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Beschikbaar</label><br>
+                                        <span *ngIf="usernameAvailable" [innerHTML]="'check-circle' | feather:16"></span>
+                                        <span *ngIf="!usernameAvailable" [innerHTML]="'slash' | feather:16"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="emailR">Email</label>
+                                        <input #emailR type="text" class="form-control" id="emailR" placeholder="Typ hier uw emailadres...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="passwordR">Wachtwoord</label>
+                                        <input #passwordR type="password" class="form-control" id="passwordR" placeholder="Typ hier uw wachtwoord...">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="passwordRNotSend">Wachtwoord opnieuw</label>
+                                        <input #passwordRNotSend type="password" class="form-control" id="passwordRNotSend" placeholder="Typ hier uw wachtwoord...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row modal-footer pl-0 pr-2 pb-0 pt-2">
+                                <button class="btn btn-secondary" data-dismiss="modal"><span [innerHTML]="'x' | feather:16"></span> Annuleren</button>
+                                <button class="btn btn-primary" data-dismiss="modal" (click)="registerComplete(firstnameR.value, lastnameR.value, usernameR.value, emailR.value, passwordR.value, passwordRNotSend.value)" id="registerButton" #registerButton><span [innerHTML]="'send' | feather:16"></span> Registreren</button>
+                            </div>
+                        </form>
+                    </div>
+        </div>
+    </div>
+</div>

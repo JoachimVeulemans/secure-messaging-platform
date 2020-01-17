@@ -1,0 +1,11 @@
+<div class="bottom-right">
+    <div *ngFor="let message of getMessages()">
+        <div [class.messageFade]="message.isFaded()" class="message alert alert-{{message.getType()}} alert-dismissible fade show" role="alert">
+            <div *ngIf="message.getType() === 'danger'">¯\_(ツ)_/¯</div>
+                {{message.getText()}}
+            <button type="button" class="close" aria-label="Close" (click)="message.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+</div>

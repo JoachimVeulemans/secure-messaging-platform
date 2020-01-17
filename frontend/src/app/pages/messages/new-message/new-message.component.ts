@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ApiService } from './../../../services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { Message } from './../../../data/classes/Message';
 import { PopUpComponent } from 'src/app/popup/popup.component';
 import { TreeviewService } from '../treeview/treeview.service';
@@ -40,7 +39,6 @@ export class NewMessageComponent implements OnInit {
         this.treeviewService.selectedItem$.subscribe((value: User) => {
             this.selectUser(value);
         });
-        AppInsights.trackPageView('NewMessage');
     }
 
     ngOnInit(): void {

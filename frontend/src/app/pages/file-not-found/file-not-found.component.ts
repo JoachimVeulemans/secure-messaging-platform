@@ -1,4 +1,3 @@
-import { AppInsights } from 'applicationinsights-js';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,10 +7,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./file-not-found.component.scss']
 })
 export class FileNotFoundComponent {
-    constructor(private router: Router) {
-        AppInsights.trackPageView('404');
-        AppInsights.trackEvent('404');
-    }
+    constructor(private router: Router) { }
 
     navigate(route: string): void {
         this.router.navigate([route]);

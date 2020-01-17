@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../../services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { PopUpComponent } from 'src/app/popup/popup.component';
 import { Router } from '@angular/router';
 import { User } from 'src/app/data/classes/User';
@@ -13,9 +12,7 @@ import { User } from 'src/app/data/classes/User';
 export class ProfileComponent implements OnInit {
     user: User = new User();
 
-    constructor(private apiService: ApiService, private router: Router) {
-        AppInsights.trackPageView('Profile');
-    }
+    constructor(private apiService: ApiService, private router: Router) { }
 
     ngOnInit(): void {
         this.getUser();

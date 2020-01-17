@@ -1,5 +1,4 @@
 import { ApiService } from './../../services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -23,8 +22,6 @@ export class HomeComponent {
                 this.router.navigate(['/']);
             }
         });
-
-        AppInsights.trackPageView('Home');
     }
 
     login(username: string, password: string): void {

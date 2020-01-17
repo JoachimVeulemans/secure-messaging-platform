@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { Message } from 'src/app/data/classes/Message';
 import { PopUpComponent } from 'src/app/popup/popup.component';
 import { Router } from '@angular/router';
@@ -20,9 +19,7 @@ export class SentMessagesComponent implements OnInit {
     selectedMessage: Message = new Message();
     userState: UserState = new UserState();
 
-    constructor(private apiService: ApiService, private router: Router) {
-        AppInsights.trackPageView('SendMessages');
-    }
+    constructor(private apiService: ApiService, private router: Router) { }
 
     ngOnInit(): void {
         this.loadUsers();

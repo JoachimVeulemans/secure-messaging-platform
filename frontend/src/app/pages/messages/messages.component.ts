@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../../services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { LoggedInActive } from 'src/app/data/classes/state/LoggedInActive';
 import { LoggedInAway } from 'src/app/data/classes/state/LoggedInAway';
 import { Message } from './../../data/classes/Message';
@@ -23,9 +22,7 @@ export class MessagesComponent implements OnInit {
     selectedMessage: Message = new Message();
     userState: UserState = new UserState();
 
-    constructor(private apiService: ApiService, private router: Router) {
-        AppInsights.trackPageView('Messages');
-    }
+    constructor(private apiService: ApiService, private router: Router) { }
 
     ngOnInit(): void {
         this.loadUsers();

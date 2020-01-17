@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './../../services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { IUserNames } from 'src/app/data/interfaces/IUserNames';
 import { PopUpComponent } from './../../popup/popup.component';
 import { Router } from '@angular/router';
@@ -14,9 +13,7 @@ import { User } from 'src/app/data/classes/User';
 export class DashboardComponent implements OnInit {
     user: IUserNames = new User();
 
-    constructor(private apiService: ApiService, private router: Router) {
-        AppInsights.trackPageView('Dashboard');
-    }
+    constructor(private apiService: ApiService, private router: Router) { }
 
     ngOnInit() {
         this.apiService.getUserMe().subscribe((value: IUserNames) => {

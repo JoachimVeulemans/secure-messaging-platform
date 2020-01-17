@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppInsights } from 'applicationinsights-js';
 import { AuthService } from './services/auth.service';
 import { FadeAnimation } from './data/animations/fade';
 import { PopUpComponent } from './popup/popup.component';
@@ -15,7 +14,6 @@ export class AppComponent implements OnInit {
     constructor(private authService: AuthService) { }
 
     ngOnInit(): void {
-        this.setApplicationInsights();
         const obs = this.authService.checkLoggedIn();
 
         obs.subscribe(
@@ -27,10 +25,6 @@ export class AppComponent implements OnInit {
                 }
             }
         );
-    }
-
-    setApplicationInsights(): void {
-        AppInsights.downloadAndSetup({ instrumentationKey: 'b68fa67d-4176-4f97-a7c7-6a4d84d7170f' });
     }
 
     getAnimationData(outlet: RouterOutlet) {

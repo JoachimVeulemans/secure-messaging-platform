@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ApiService } from './../../../services/api.service';
-import { AppInsights } from 'applicationinsights-js';
 import { Message } from './../../../data/classes/Message';
 import { PopUpComponent } from './../../../popup/popup.component';
 import { User } from 'src/app/data/classes/User';
@@ -17,9 +16,7 @@ export class MessageComponent implements OnInit {
     filename = '';
     filedata: SafeResourceUrl = '';
 
-    constructor(private sanitizer: DomSanitizer, private apiService: ApiService) {
-        AppInsights.trackPageView('Message');
-    }
+    constructor(private sanitizer: DomSanitizer, private apiService: ApiService) { }
 
     ngOnInit(): void {
         this.message = new Message().toDocumentSpec(this.message);

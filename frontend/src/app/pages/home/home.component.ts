@@ -22,6 +22,7 @@ export class HomeComponent {
                 this.router.navigate(['/']);
             }
         });
+
     }
 
     login(username: string, password: string): void {

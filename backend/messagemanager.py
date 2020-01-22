@@ -13,7 +13,7 @@ from usermanager import get_user_pass_hash
 
 path_to_file = os.getenv('FILES')
 if path_to_file is None:
-    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/"
+    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 path_to_file += "messages.txt"
 
 

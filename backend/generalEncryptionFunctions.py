@@ -18,7 +18,7 @@ SALT_SIZE = 16
 
 path_to_file = os.getenv('FILES')
 if path_to_file is None:
-    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/"
+    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 else:
     path_to_file = path_to_file[5:]
 path_to_public_keys = path_to_file + "publicKeys/pub_key_"

@@ -10,7 +10,7 @@ from generalfunctions import is_valid_id, IDException, generate_id
 
 path_to_file = os.getenv('FILES')
 if path_to_file is None:
-    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/"
+    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 path_to_file += "users.txt"
 
 def get_user(id: str):

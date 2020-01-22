@@ -10,7 +10,7 @@ from generalfunctions import generate_id, is_valid_email, EmailException, is_val
 
 path_to_file = os.getenv('FILES')
 if path_to_file is None:
-    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/"
+    path_to_file = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 path_to_file += "users.txt"
 
 class User(UserMixin):

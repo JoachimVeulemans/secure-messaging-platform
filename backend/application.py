@@ -11,15 +11,15 @@ from usermanager import get_all_users, get_user, post_user, put_user, delete_use
 from messagemanager import get_all_messages, get_message, get_my_messages, get_sent_messages, post_message, delete_message
 import generalEncryptionFunctions
 
-hard_code_origin = 'https://secure-messaging-platform.jocawebs.be'
+base_url = 'https://secure-messaging-platform.joachimveulemans.be'
 
 origin = os.getenv('ORIGIN')
 if origin is None:
-    origin = hard_code_origin
+    origin = base_url
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True, resources={
-    r"/*": {"origins": [hard_code_origin + ":443/*"]}})
+    r"/*": {"origins": [base_url + ":443/*"]}})
 
 logging.getLogger('flask_cors').level = logging.DEBUG
 

@@ -19,9 +19,7 @@ export class AppComponent implements OnInit {
         obs.subscribe(
             (value) => {
                 if (value) {
-                    PopUpComponent.addSuccess('Ingelogd!');
-                } else {
-                    PopUpComponent.addError('We konden jou niet inloggen!');
+                    PopUpComponent.addSuccess('Je bent succesvol ingelogd!');
                 }
             }
         );

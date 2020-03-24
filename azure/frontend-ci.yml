@@ -32,6 +32,12 @@ steps:
   workingDirectory: './frontend'
   displayName: 'npm run test'
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
 - script: npm audit
   workingDirectory: './frontend'
   displayName: 'npm audit'
+  continueOnError: 'true'

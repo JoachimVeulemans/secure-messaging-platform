@@ -28,7 +28,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/coverage.xml'
+    testResultsFiles: '**/test-results.xml'
 
 - task: Docker@2
   inputs:

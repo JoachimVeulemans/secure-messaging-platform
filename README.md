@@ -1,5 +1,7 @@
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/joachimveulemans/secure-messaging-platform)](https://hub.docker.com/r/joachimveulemans/secure-messaging-platform/builds)
-[![Docker Automated Status](https://img.shields.io/docker/cloud/automated/joachimveulemans/secure-messaging-platform)](https://hub.docker.com/r/joachimveulemans/secure-messaging-platform)
+[![Frontend CI Build](https://img.shields.io/azure-devops/build/joachimveulemans/bd36ea11-09f1-4900-8ae5-f2a3633cf2c1/2?label=Frontend%20CI%20Build)](https://dev.azure.com/JoachimVeulemans/secure-messaging-platform/_build?definitionId=2)
+[![Frontend CD Build](https://img.shields.io/azure-devops/build/joachimveulemans/bd36ea11-09f1-4900-8ae5-f2a3633cf2c1/3?label=Frontend%20CD%20Build)](https://dev.azure.com/JoachimVeulemans/secure-messaging-platform/_build?definitionId=3)
+[![Backend CI Build](https://img.shields.io/azure-devops/build/joachimveulemans/bd36ea11-09f1-4900-8ae5-f2a3633cf2c1/4?label=Backend%20CI%20Build)](https://dev.azure.com/JoachimVeulemans/secure-messaging-platform/_build?definitionId=4)
+[![Backend CD Build](https://img.shields.io/azure-devops/build/joachimveulemans/bd36ea11-09f1-4900-8ae5-f2a3633cf2c1/5?label=Backend%20CD%20Build)](https://dev.azure.com/JoachimVeulemans/secure-messaging-platform/_build?definitionId=5)
 
 # Secure Messaging Platform
 

@@ -25,6 +25,11 @@ steps:
   workingDirectory: './backend'
   displayName: 'Run testing with pytest'
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/*.xml'
+
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'

@@ -17,3 +17,4 @@ steps:
     command: 'buildAndPush'
     Dockerfile: 'frontend/Dockerfile'
     buildContext: 'frontend'
+    tags: 'frontend'

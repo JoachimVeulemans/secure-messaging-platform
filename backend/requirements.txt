@@ -1,4 +1,4 @@
-bson==0.5.8
+bson==0.5.9
 cryptography==2.8
 Flask==1.1.1
 Flask-Cors==3.0.8

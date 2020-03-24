@@ -41,3 +41,12 @@ steps:
   workingDirectory: './frontend'
   displayName: 'npm audit'
   continueOnError: 'true'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    repository: 'joachimveulemans/secure-messaging-platform'
+    command: 'build'
+    Dockerfile: 'frontend/Dockerfile'
+    buildContext: 'frontend'
+    tags: 'frontend'

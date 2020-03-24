@@ -15,5 +15,5 @@ steps:
     containerRegistry: 'DockerHub'
     repository: 'secure-messaging-platform'
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    Dockerfile: 'frontend/Dockerfile'
     buildContext: 'frontend'

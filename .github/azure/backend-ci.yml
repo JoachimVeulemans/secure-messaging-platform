@@ -10,14 +10,29 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
+- task: UsePythonVersion@0
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    versionSpec: '3.x'
+    addToPath: true
+    architecture: 'x64'
 
 - script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
-  workingDirectory: './frontend'
-  displayName: 'npm install and build'
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+    pip install -e ./parameterized-0.7.0
+    pip install pytest
+  workingDirectory: './backend'
+  displayName: 'Install dependencies'
+
+- script: pytest
+  workingDirectory: './backend'
+  displayName: 'Run testing with pytest'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerHub'
+    repository: 'joachimveulemans/secure-messaging-system'
+    command: 'build'
+    Dockerfile: 'backend/Dockerfile'
+    buildContext: 'backend'
+    tags: 'backend'

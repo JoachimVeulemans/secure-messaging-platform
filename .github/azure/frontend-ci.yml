@@ -12,12 +12,29 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
+- script: npm install -g @angular/cli
   workingDirectory: './frontend'
-  displayName: 'npm install and build'
+  displayName: 'npm install @angular/cli'
+
+- script: npm install
+  workingDirectory: './frontend'
+  displayName: 'npm install dependencies'
+
+- script: npm run build --prod
+  workingDirectory: './frontend'
+  displayName: 'npm run build --prod'
+
+- script: npm run lint
+  workingDirectory: './frontend'
+  displayName: 'npm run lint'
+
+- script: npm run test
+  workingDirectory: './frontend'
+  displayName: 'npm run test'
+
+- script: npm audit
+  workingDirectory: './frontend'
+  displayName: 'npm audit'

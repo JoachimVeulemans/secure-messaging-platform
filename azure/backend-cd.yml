@@ -10,7 +10,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'
-    repository: 'joachimveulemans/secure-messaging-system'
+    repository: 'joachimveulemans/secure-messaging-platform'
     command: 'buildAndPush'
     Dockerfile: 'backend/Dockerfile'
     buildContext: 'backend'

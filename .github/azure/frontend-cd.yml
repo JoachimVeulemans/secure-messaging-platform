@@ -13,7 +13,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerHub'
-    repository: 'secure-messaging-platform'
+    repository: 'joachimveulemans/secure-messaging-platform'
     command: 'buildAndPush'
     Dockerfile: 'frontend/Dockerfile'
     buildContext: 'frontend'

@@ -28,7 +28,7 @@
     "moment": "^2.24.0",
     "ng-multiselect-dropdown": "^0.2.10",
     "popper.js": "^1.16.1",
-    "rxjs": "~6.5.4",
+    "rxjs": "~6.5.5",
     "sha.js": "^2.4.11",
     "tslib": "^1.11.1",
     "tslint-eslint-rules": "^5.4.0",
